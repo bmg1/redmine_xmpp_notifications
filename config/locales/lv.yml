@@ -1,0 +1,8 @@
+ru:
+  xmpp_label_connection_settings: Paziņojuma iestatījumi XMPP
+  xmpp_label_jid: Jabber ID (jid@server.tld)
+  xmpp_label_password: Parole
+  xmpp_label_notification_settings: Paziņojumu iestatījumi
+  xmpp_label_send_to_watchers: Lai ziņotu novērotājiem?
+  xmpp_label_port: Ievadiet PORT
+  xmpp_label_ip: Norādiet IP vai Host

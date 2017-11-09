@@ -1,0 +1,8 @@
+ru:
+  xmpp_label_connection_settings: إعدادات الإعلام ل سمب
+  xmpp_label_jid: Jabber ID (jid@server.tld)
+  xmpp_label_password: كلمة المرور
+  xmpp_label_notification_settings: إعدادات الإعلام
+  xmpp_label_send_to_watchers: لإخطار المراقبين؟
+  xmpp_label_port: أدخل بورت
+  xmpp_label_ip: حدد إب أو هوست

@@ -1,0 +1,8 @@
+ru:
+  xmpp_label_connection_settings: Налаштування повідомлень по XMPP
+  xmpp_label_jid: Jabber ID (jid@server.tld)
+  xmpp_label_password: Пароль
+  xmpp_label_notification_settings: Налаштування сповіщень
+  xmpp_label_send_to_watchers: Сповіщати спостерігачів?
+  xmpp_label_port: Вкажіть ПОРТ
+  xmpp_label_ip: Вкажіть IP або Хост

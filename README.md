@@ -4,7 +4,7 @@
 - add PORT
 - add IP
 - remove AVAILABLE
-- add Latvian language
+- add Latvian, Ukraine, Arabic language
 
 This plugin is intended to provide integration with XMPP messenger (Jabber).
 
