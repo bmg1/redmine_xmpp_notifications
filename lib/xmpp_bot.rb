@@ -34,8 +34,6 @@ class Bot
     # user = XmppNotificationsUserSetting.where(jid: jid.strip.to_s).first.user
     user = jid_user original_message.from
     iss = Issue.find(issue)
-
-
     if user.allowed_to?(:edit_issues, iss.project)
       journal = iss.init_journal(user, comment)
       journal.save
@@ -174,6 +172,8 @@ class Bot
 
     @jabber_id = @config["jid"]
     @jabber_password = @config["jidpassword"] or ENV['jabber_password'] or ''
+    @jabber_port = @config["jidport"] or ENV['jabber_port'] or '5222'
+    @jabber_ip = @config["jidip"] or ENV['jabber_ip'] or 'localhost'
 
     @static_config = {
         %r{^\+#([[:digit:]]+)[[:space:]]+(.+)$} => Proc.new do |original_message, issue, comment_message|
@@ -193,13 +193,19 @@ class Bot
   def connect
     return unless @client.nil?
 
-    Rails.logger.info "#{'*'*65}\n* XMPP Bot <#{@jabber_id}> started connecting to server\n#{'*'*65}"
+    Rails.logger.info "#{'*'*65}\n* XMPP Bot <#{@jabber_id}> started connecting to server , port: <#{@jabber_port}>  jabber_ip: <#{@jabber_ip}> \n#{'*'*65}"
 
+
+
+
+    #jid = JID.new(@jabber_id)
     jid = JID.new(@jabber_id)
     @client = Client.new jid
-    @client.connect
-    @client.auth @jabber_password
-    @client.send(Presence.new.set_type(:available))
+    #@client.connect
+    @client.connect(@jabber_ip, @jabber_port)
+    #@client.auth @jabber_password
+    @client.auth(@jabber_password)
+    ##@client.send(Presence.new.set_type(:available))
 
     @client.add_message_callback do |message|
       unless message.body.nil? && message.type != :error
@@ -228,6 +234,7 @@ class Bot
   def deliver jid, message_text, message_type = :chat
     message = Message.new(jid, message_text)
     message.type = message_type
+    Rails.logger.info "#{'*'*65}\n* deliver jid: <#{jid}>  \n#{'*'*65}"
     client.tap {|client|
       client.send(message) unless client.nil?
     }

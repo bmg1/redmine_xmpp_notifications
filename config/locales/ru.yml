@@ -4,3 +4,5 @@ ru:
   xmpp_label_password: Пароль
   xmpp_label_notification_settings: Настройки оповещений
   xmpp_label_send_to_watchers: Оповещать наблюдателей?
+  xmpp_label_port: Укажите ПОРТ
+  xmpp_label_ip: Укажите IP или Хост

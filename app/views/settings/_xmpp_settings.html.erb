@@ -1,4 +1,4 @@
-<fieldset>
+﻿<fieldset>
   <legend><%= l(:xmpp_label_connection_settings) %></legend>
   <p>
     <label><%= l(:xmpp_label_jid) %></label>
@@ -8,6 +8,15 @@
   <p>
     <label><%= l(:xmpp_label_password) %></label>
     <%= password_field_tag "settings[jidpassword]", @settings["jidpassword"] %>
+  </p>
+  
+   <p>
+    <label><%= l(:xmpp_label_port) %></label>
+    <%= text_field_tag "settings[jidport]", @settings["jidport"] %>
+  </p>
+  <p>
+    <label><%= l(:xmpp_label_ip) %></label>
+    <%= text_field_tag "settings[jidip]", @settings["jidip"] %>
   </p>
 </fieldset>
 <fieldset>

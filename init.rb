@@ -16,10 +16,10 @@ end
 
 Redmine::Plugin.register :redmine_xmpp_notifications do
   name "Redmine XMPP Notifications plugin"
-  author "Pavel Musolin & Vadim Misbakh-Soloviov & Yokujin Yokosuka & Others"
-  description "A plugin to send Redmine Activity and receive commands over XMPP"
-  version "2.1.0"
-  url "https://github.com/redmine-xmpp/notifications"
+  author "Pavel Musolin & Vadim Misbakh-Soloviov & Yokujin Yokosuka & Others, feat BMG"
+  description "A plugin to send Redmine Activity and receive commands over XMPP, allow change IP and port"
+  version "2.1.1"
+  url "https://github.com/bmg1/redmine_xmpp_notifications"
 
   settings :default => {"jid" => "", "password" => "", "send_to_watchers" => true}, :partial => "settings/xmpp_settings"
 end
